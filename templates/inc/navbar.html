@@ -1,0 +1,42 @@
+{% load static %}
+
+{% block extra_style %}
+<link rel="stylesheet" href="{% static 'css/base.css'%}">
+{% endblock %}
+
+<header id="header">
+        
+  <!-- Logo -->
+  <a href="{% url 'home:home' %}" class="logo-link">
+      <img class="logo-img" src="{% static 'img/logo.png' %}" alt="logo">
+  </a>
+  
+  <!-- Navbar -->
+  <nav>
+  <ul class="navbar-list">
+      <li>
+          <a class='home-link' href="{% url 'home:home' %}">Home</a>
+      </li>
+      <li>
+          <a class='register-link' href="{% url 'accounts:user_register' %}">Register</a>
+      </li>
+      <li>
+        {% if request.user.is_authenticated %}
+            <a class='logout-link' href="{% url 'accounts:user_logout' %}">Logout</a>
+      </li>
+      <li>
+        {% else %}
+          <a class='login-link' href="{% url 'accounts:user_login' %}">Login</a>
+        {% endif %}
+      </li>
+      <li>
+            <a class='cart-link' href="{% url 'orders:cart' %}">CART {{ cart|length }}</a>
+      </li>
+  </ul>
+  
+
+  </nav>
+  <a href="#" class="header-contact-link">Contact</a>
+
+
+</header>

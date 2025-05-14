@@ -1,0 +1,101 @@
+/* General */
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    
+}
+
+body {
+    background-color: #FCFAF1;
+}
+
+i {
+    color: #102C57;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+img {
+    width: 100%;
+}
+
+/* Header Styles */
+#header {
+    
+    background: #343434; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo Link */
+#header .logo-link {
+    line-height: 0;
+}
+
+/* Logo Image */
+#header .logo-link .logo-img {
+    color: wheat;
+    width: 80;
+    height: 80; 
+}
+
+/* Navbar */
+#header .navbar-list {
+    display: inline-flex;
+    gap: 20px;
+    margin-top: 15px;
+    margin-bottom: 1rem;
+}
+
+/* Home Link */
+#header .navbar-list .home-link {
+    color: white;
+    text-decoration: none;
+}
+/* Register Link */
+#header .navbar-list .register-link {
+    color: white;
+    text-decoration: none;
+}
+/* Login Link */
+#header .navbar-list .login-link {
+    color: white;
+    text-decoration: none;
+}
+/* Logout Link */
+#header .navbar-list .logout-link {
+    color: white;
+    text-decoration: none;
+}
+/* Cart Link */
+#header .navbar-list .cart-link {
+    color: white;
+    text-decoration: none;
+    
+}
+
+/* Contact Link */
+#header .header-contact-link {
+    background: #E6B31E;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    padding: 15px 10px 18px 10px;
+    border-radius: 7px;
+    line-height: 1px;
+}
+
+
+.content {
+    position: relative;
+    z-index: 1;
+}
+
+

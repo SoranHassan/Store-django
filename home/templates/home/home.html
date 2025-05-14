@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+<title> HOME </title>
+{% endblock %}
+
+{% block extra_style %} 
+    <link rel="stylesheet", href="{% static 'home/css/style.css' %}">
+{% endblock %}
+
+{% block content %}
+    
+    <div class="filter-box">
+        {% for category in categories %}
+        <ul class="filters">
+            <li>
+                <a class='filter-item' href="{{ category.get_absolute_url }}">{{ category.name }} </a>
+            </li>
+        </ul>
+        {% endfor %}
+    </div>
+        
+    {% for product in products %}
+    <div class="menu-div">
+        <section class="items">
+            <img src='{{ product.image.url }}' alt="hot-chocolate" class="items-img">
+            <div class="menu-title">
+                <a href="{{ product.get_absolute_url }}" style="text-decoration: none; color: black;">
+                    {{ product.name }}
+                </a>
+            </div>
+            <p class="price-par">{{ product.price }} euro </p>
+            <div class="menu-info">
+                <form action="{% url 'orders:cart' product.id %}" method="post">
+                    {% csrf_token %}
+                    {{ form }}
+                </form>
+                <input class="order-link" type="submit" value="Add to chart">
+            </div>
+        </section>
+    </div>
+    {% endfor %}
+{% endblock %}
