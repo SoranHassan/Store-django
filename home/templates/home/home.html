@@ -32,11 +32,17 @@
             </div>
             <p class="price-par">{{ product.price }} euro </p>
             <div class="menu-info">
-                <form action="{% url 'orders:cart' product.id %}" method="post">
+                <form action="{% url 'orders:cart_add' product.id %}" method="post">
                     {% csrf_token %}
-                    {{ form }}
+                    <ul class="order-list">
+                        <li>
+                            {{ form }}
+                        </li>
+                        <li>
+                            <input class="order-link" type="submit" value="Add to chart">
+                        </li>
+                    </ul>
                 </form>
-                <input class="order-link" type="submit" value="Add to chart">
             </div>
         </section>
     </div>

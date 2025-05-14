@@ -11,4 +11,11 @@
 
 {% block content %}
 
+    <div class="main-box">
+        <h2 class="product-title">{{ product.name }}</h2><hr>
+        <p class="product-description"><strong>Description:</strong> {{ product.description }}</p>
+        <p class="product-price"><strong>Price: </strong>{{ product.price }} Euro</p>
+        <small class="product-created"><strong>Product Created: </strong>{{ product.created }}</small>
+    </div>
+
 {% endblock %}

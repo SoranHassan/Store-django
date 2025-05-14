@@ -10,6 +10,12 @@ import json
 import datetime
 from django.contrib import messages
 
+MERCHANT = 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX'
+ZP_API_REQUEST = 'https://api.zarinpal.com/pg/v4/payment/request.json'
+ZP_API_VERIFY = 'https://api.zarinpal.com/pg/v4/payment/verify.json'
+ZP_API_STARTPAY = 'https://www.zarinpal.com/pg/v4/StartPay/{authority}'
+description = 'Your Payment Description'
+CallbackURL = 'http://127.0.0.1:8000/orders/verify/'
 
 class CartView(View):
     def get(self, request):
@@ -33,7 +39,7 @@ class CartRemoveView(View):
         cart.remove(product)
         return redirect('orders:cart')
     
-class OrderDetailView(LoginRequiredMixin, View):
+class OrderDetailView(View):
     form_class = CouponApplyForm
 
     def get(self, request, order_id):

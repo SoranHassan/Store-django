@@ -20,6 +20,7 @@ i {
 ul {
     list-style-type: none;
     padding-left: 0;
+    display: flex;
 }
 
 img {
