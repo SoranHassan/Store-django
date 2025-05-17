@@ -1,0 +1,8 @@
+.main-box {
+    width: 400px;
+    height: 200px;
+    background-color: bisque;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 15px;
+}

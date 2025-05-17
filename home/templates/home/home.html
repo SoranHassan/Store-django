@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block extra_style %} 
-    <link rel="stylesheet", href="{% static 'home/css/style.css' %}">
+    <link rel="stylesheet", href="{% static 'home/css/home.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -26,9 +26,7 @@
         <section class="items">
             <img src='{{ product.image.url }}' alt="hot-chocolate" class="items-img">
             <div class="menu-title">
-                <a href="{{ product.get_absolute_url }}" style="text-decoration: none; color: black;">
-                    {{ product.name }}
-                </a>
+                <h3>{{ product.name }}</h3>
             </div>
             <p class="price-par">{{ product.price }} euro </p>
             <div class="menu-info">
@@ -38,9 +36,19 @@
                         <li>
                             {{ form }}
                         </li>
-                        <li>
+                        <li style="border-top: 1px solid gray; margin-top: 10px; padding-top: 10px;">
                             <input class="order-link" type="submit" value="Add to chart">
+                            <a class="detail-btn" href="{{ product.get_absolute_url }}" style="
+                            text-decoration: none;
+                            background: blueviolet;
+                            color: white;
+                            border-radius: 7px;
+                            padding: 6px;
+                            margin: 30px;
+                            line-height: 5px;
+                            ">Product Detail</a>
                         </li>
+                        
                     </ul>
                 </form>
             </div>

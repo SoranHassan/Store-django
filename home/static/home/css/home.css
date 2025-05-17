@@ -28,7 +28,6 @@
 .menu-div .items .menu-title {
     border-top: 1px solid #102C57;;
     margin: 4px;
-    font-size: 22px;
 }
 
 .menu-div .items .price-par {
@@ -38,24 +37,18 @@
 /* Menu Informations Box*/
 .menu-div .items .menu-info {
     display: flex;
-    padding: 2px;
-    margin: 5px;
-    gap: 30px;
-
+    gap: 25px;
 }
 
 .menu-div .items .menu-info .order-list {
-    display: flex;
     padding: 2px;
     margin: 5px;
-    gap: 30px;
 }
 
 /* Menu List */
 .menu-div .items .menu-info .order-link {
     background: #102C57;
     color: white;
-    border-radius: 15px;
     padding: 15px 10px 18px 10px;
     border-radius: 7px;
     line-height: 1px;
@@ -85,14 +78,7 @@
     margin: 5px;
 }
 
-.main-box {
-    width: 400px;
-    height: 200px;
-    background-color: bisque;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 15px;
-}
+
 
 
 

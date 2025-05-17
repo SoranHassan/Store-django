@@ -1,0 +1,69 @@
+.container {
+    width: 400px;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+    /* مرکز‌چین کردن فرم */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px; /* فاصله بین آیتم‌ها */
+
+    /* قرار دادن در وسط صفحه */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+fieldset {
+    border: none;
+    padding: 20px;
+    width: 100%;
+}
+
+.login-box {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* فاصله بین فیلدهای ورودی */
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-btn:hover {
+    background: #0056b3;
+}
+
+/* تنظیم لینک‌ها و متن‌های کوچک */
+small {
+    display: block;
+    margin-top: 5px;
+}
+
+small a {
+    color: #007bff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+small a:hover {
+    color: #0056b3;
+}

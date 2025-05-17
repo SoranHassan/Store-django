@@ -6,17 +6,24 @@
 {% endblock %}
 
 {% block extra_style %}
-    <link rel="stylesheet" href="{% static 'accounts/css/user.css' %}"> 
+    <link rel="stylesheet" href="{% static 'accounts/css/login.css' %}"> 
 {% endblock %}
 
 {% block content %}
 <div class="container">
-    <div class="login-box">
-        <form method="post" novalidate>
-            {% csrf_token %}
-            {{ form.as_p }}
-            <input type="submit" value="Login">
-        </form>
-    </div>
+    <fieldset>
+        <legend>Login</legend>
+        <div class="login-box">
+            <form method="post" novalidate>
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input class="login-btn" type="submit" value="Login">
+            </form><hr>
+            <small class="forget-pass">forget your password? <a href="" style="text-decoration: none;">reset password</a></small><br>
+            <small class="register-link">don't have an account? 
+                <a href="{% url 'accounts:user_register'%}" style="text-decoration: none;">register</a>
+            </small>
+        </div>
+    </fieldset>
 </div>
 {% endblock %}

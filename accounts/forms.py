@@ -34,10 +34,10 @@ class UserChangeForm(forms.ModelForm):
         fields = ('email', 'phone_number', 'full_name', 'password', 'last_login')
 
 class UserRegistrationForm(forms.Form):
-    email = forms.EmailField(max_length=255)
-    full_name = forms.CharField(max_length=255, label="Full Name")
-    phone_number = forms.CharField(max_length=11)
-    password = forms.CharField(max_length=255, widget=forms.PasswordInput)
+    email = forms.EmailField(max_length=255, widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Enter Email'}))
+    full_name = forms.CharField(max_length=255, label="Full Name", widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter Full Name'}))
+    phone_number = forms.CharField(max_length=11, label='Phone', widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter phone number'}))
+    password = forms.CharField(max_length=255, widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Enter Password'}))
 
     def clean_email(self):
         email = self.cleaned_data['email']
@@ -55,8 +55,8 @@ class UserRegistrationForm(forms.Form):
         return phone_number
 
 class UserLoginForm(forms.Form):
-    phone_number = forms.CharField(max_length=11)
-    password = forms.CharField(label='Password', widget=forms.PasswordInput())
+    phone_number = forms.CharField(label='Phone', max_length=11, widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter phone number'}))
+    password = forms.CharField(label='Password', widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Enter Password'}))
 
 class VerifyCodeForm(forms.Form):
     verify_code = forms.IntegerField()
